@@ -4,12 +4,14 @@
 
 int main(void)
 {
+	uint32_t val;
 	board_init();
 	lcd_init();
 	ldr_init();
 	board_stdout(LCD_STDOUT);
 	while (1) {
-		printf ("ldr: %u\n", ldr_read());
+		val = ldr_read();
+		printf ("ldr: %d\n", val);
 	}
 	return 0;
 }
